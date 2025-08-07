@@ -172,3 +172,146 @@ document.addEventListener('DOMContentLoaded', function() {
         addEntranceAnimation(element, index * 0.1);
     });
 });
+
+// Wendy Notes Form Handler
+document.addEventListener('DOMContentLoaded', function() {
+    const notesForm = document.querySelector('.notes-form');
+    if (notesForm) {
+        notesForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const section = document.getElementById('section-select').value;
+            const request = document.getElementById('request-text').value;
+            const priority = document.getElementById('priority-select').value;
+            
+            if (!section || !request.trim()) {
+                alert('Please select a section and enter your request.');
+                return;
+            }
+            
+            // For now, just show an alert - in production you'd send this to a server
+            alert(`Request submitted!\\n\\nSection: ${section}\\nPriority: ${priority}\\nRequest: ${request.substring(0, 100)}${request.length > 100 ? '...' : ''}`);
+            
+            // Clear the form
+            notesForm.reset();
+        });
+    }
+
+    // Photo Upload Handler
+    const photoUpload = document.getElementById('photo-upload');
+    const photoGrid = document.getElementById('photo-grid');
+    const uploadZone = document.querySelector('.upload-zone');
+    let uploadedPhotos = [];
+    let selectedPhoto = null;
+
+    // Handle drag and drop
+    if (uploadZone) {
+        uploadZone.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            uploadZone.style.borderColor = 'var(--golden-honey)';
+            uploadZone.style.background = 'rgba(255, 255, 255, 0.1)';
+        });
+        
+        uploadZone.addEventListener('dragleave', () => {
+            uploadZone.style.borderColor = 'rgba(255, 255, 255, 0.4)';
+            uploadZone.style.background = 'transparent';
+        });
+        
+        uploadZone.addEventListener('drop', (e) => {
+            e.preventDefault();
+            uploadZone.style.borderColor = 'rgba(255, 255, 255, 0.4)';
+            uploadZone.style.background = 'transparent';
+            
+            const files = Array.from(e.dataTransfer.files).filter(file => file.type.startsWith('image/'));
+            handlePhotoUpload(files);
+        });
+    }
+
+    // Handle file input
+    if (photoUpload) {
+        photoUpload.addEventListener('change', (e) => {
+            const files = Array.from(e.target.files);
+            handlePhotoUpload(files);
+        });
+    }
+
+    function handlePhotoUpload(files) {
+        files.forEach(file => {
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                const photoData = {
+                    id: Date.now() + Math.random(),
+                    name: file.name,
+                    src: e.target.result,
+                    assigned: null
+                };
+                
+                uploadedPhotos.push(photoData);
+                displayPhotos();
+            };
+            reader.readAsDataURL(file);
+        });
+    }
+
+    function displayPhotos() {
+        if (!photoGrid) return;
+        
+        if (uploadedPhotos.length === 0) {
+            photoGrid.innerHTML = `
+                <div class="photo-placeholder">
+                    <p>No photos uploaded yet</p>
+                    <p class="placeholder-hint">Upload images to manage your gallery</p>
+                </div>
+            `;
+            return;
+        }
+        
+        photoGrid.innerHTML = uploadedPhotos.map(photo => `
+            <div class="photo-item ${selectedPhoto === photo.id ? 'selected' : ''}" data-photo-id="${photo.id}">
+                <img src="${photo.src}" alt="${photo.name}" class="gallery-photo">
+                <div class="photo-info">
+                    <p class="photo-name">${photo.name}</p>
+                    ${photo.assigned ? `<p class="assigned-to">→ ${photo.assigned}</p>` : ''}
+                </div>
+            </div>
+        `).join('');
+        
+        // Add click handlers for photo selection
+        document.querySelectorAll('.photo-item').forEach(item => {
+            item.addEventListener('click', () => {
+                document.querySelectorAll('.photo-item').forEach(p => p.classList.remove('selected'));
+                item.classList.add('selected');
+                selectedPhoto = item.dataset.photoId;
+            });
+        });
+    }
+
+    // Photo assignment handler
+    const assignButton = document.getElementById('assign-photo');
+    if (assignButton) {
+        assignButton.addEventListener('click', () => {
+            const sectionSelect = document.getElementById('photo-section-select');
+            const selectedSection = sectionSelect.value;
+            
+            if (!selectedPhoto) {
+                alert('Please select a photo first.');
+                return;
+            }
+            
+            if (!selectedSection) {
+                alert('Please select a section.');
+                return;
+            }
+            
+            // Update the photo assignment
+            const photo = uploadedPhotos.find(p => p.id == selectedPhoto);
+            if (photo) {
+                photo.assigned = selectedSection;
+                displayPhotos();
+                alert(`Photo "${photo.name}" assigned to ${selectedSection} section!`);
+                selectedPhoto = null;
+                sectionSelect.value = '';
+            }
+        });
+    }
+});
