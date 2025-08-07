@@ -115,10 +115,13 @@ p {
     width: 100%;
     background: rgba(254, 254, 254, 0.98);
     backdrop-filter: blur(20px);
-    padding: 1.5rem 0;
+    padding: 1rem 0;
     z-index: 1000;
     border-bottom: 1px solid rgba(42, 42, 42, 0.08);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    height: 70px;
+    display: flex;
+    align-items: center;
 }
 
 .nav-container {
@@ -192,22 +195,24 @@ p {
 }
 
 .nav-cta .book-now {
-    background: var(--sage-green);
-    color: #fefefe;
-    padding: 12px 24px;
-    border-radius: 0;
-    font-size: 0.9rem;
-    font-weight: 400;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
+    background: var(--golden-honey);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    text-decoration: none;
     transition: all 0.3s ease;
-    border: 1px solid var(--sage-green);
+    border: none;
+    white-space: nowrap;
+    display: inline-block;
 }
 
 .nav-cta .book-now:hover {
     background: var(--deep-brown);
-    color: #fefefe;
-    border-color: var(--deep-brown);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
 }
 
 .hamburger {
@@ -351,12 +356,12 @@ p {
 
 /* Section Styles - The Newt Aesthetic */
 section {
-    padding: 100px 0;
+    padding: 50px 0;
 }
 
 /* Enhanced section spacing */
 .hero {
-    padding: 120px 0 80px;
+    padding: 90px 0 60px;
     min-height: 85vh;
 }
 
@@ -1551,14 +1556,14 @@ html {
 /* Booking Calendar Section */
 .booking-calendar {
     background: var(--soft-pink);
-    padding: 140px 0;
+    padding: 60px 0;
 }
 
 .booking-system {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 5rem;
-    margin-top: 2rem;
+    gap: 2rem;
+    margin-top: 1rem;
     max-width: 1400px;
     margin-left: auto;
     margin-right: auto;
@@ -1566,7 +1571,7 @@ html {
 
 .calendar-container {
     background: rgba(255, 255, 255, 0.9);
-    padding: 3rem;
+    padding: 1.5rem;
     border-radius: 16px;
     backdrop-filter: blur(10px);
 }
@@ -1575,12 +1580,12 @@ html {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
 
 .calendar-header h3 {
     font-family: 'Crimson Text', Georgia, serif;
-    font-size: 1.8rem;
+    font-size: 1.4rem;
     color: var(--deep-brown);
     margin: 0;
 }
@@ -1607,28 +1612,29 @@ html {
     background: rgba(181, 149, 107, 0.2);
     border-radius: 8px;
     overflow: hidden;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
 
 .day-header {
     background: var(--deep-brown);
     color: white;
-    padding: 1rem;
+    padding: 0.6rem;
     text-align: center;
     font-weight: 500;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
 }
 
 .calendar-day {
     background: white;
-    padding: 1rem;
+    padding: 0.6rem;
     text-align: center;
     cursor: pointer;
     transition: all 0.3s ease;
-    min-height: 50px;
+    min-height: 35px;
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 0.9rem;
 }
 
 .calendar-day:hover {
