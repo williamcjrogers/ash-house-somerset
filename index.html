@@ -23,7 +23,6 @@
                 <li><a href="#packages">Build Your Package</a></li>
                 <li><a href="#experiences">Experiences</a></li>
                 <li><a href="#contact">Contact</a></li>
-                <li><a href="#wendy-notes">Wendy Notes</a></li>
             </ul>
             <div class="nav-cta">
                 <a href="#contact" class="book-now">Book Now</a>
@@ -46,9 +45,9 @@
                     <a href="#contact" class="cta-button">Book Now</a>
                 </div>
             </div>
-        </div>
-        <div class="hero-image">
-            <img src="images/georgian-manor-hero.jpg" alt="Ash House Somerset - Georgian Manor House" class="hero-img">
+            <div class="hero-image">
+                <img src="images/georgian-manor-hero.jpg" alt="Ash House Somerset - Georgian Manor House" class="hero-img">
+            </div>
         </div>
     </section>
 
@@ -500,102 +499,6 @@
         </div>
     </section>
 
-    <!-- Wendy Notes Section -->
-    <section id="wendy-notes" class="wendy-notes">
-        <div class="container">
-            <div class="section-content">
-                <h2 class="section-title">Wendy's Notes & Requests</h2>
-                <div class="section-description">
-                    <p>This is Wendy's private area to share feedback, requests, and manage the gallery. Use this space to communicate updates and changes you'd like to see on the website.</p>
-                </div>
-                
-                <div class="wendy-dashboard">
-                    <div class="notes-section">
-                        <div class="notes-card">
-                            <h3>Feedback & Requests</h3>
-                            <form class="notes-form">
-                                <div class="form-group">
-                                    <label for="section-select">Section to Update:</label>
-                                    <select id="section-select" name="section">
-                                        <option value="">Select a section...</option>
-                                        <option value="hero">Hero Section</option>
-                                        <option value="sanctuary">The Sanctuary</option>
-                                        <option value="wellness">Wellness</option>
-                                        <option value="rooms">Rooms</option>
-                                        <option value="retreats">Retreats</option>
-                                        <option value="packages">Build Your Package</option>
-                                        <option value="experiences">Experiences</option>
-                                        <option value="contact">Contact</option>
-                                        <option value="general">General/Design</option>
-                                    </select>
-                                </div>
-                                
-                                <div class="form-group">
-                                    <label for="request-text">Your Request:</label>
-                                    <textarea id="request-text" name="request" rows="6" placeholder="Describe the changes you'd like to see..."></textarea>
-                                </div>
-                                
-                                <div class="form-group">
-                                    <label for="priority-select">Priority:</label>
-                                    <select id="priority-select" name="priority">
-                                        <option value="low">Low</option>
-                                        <option value="medium">Medium</option>
-                                        <option value="high">High</option>
-                                        <option value="urgent">Urgent</option>
-                                    </select>
-                                </div>
-                                
-                                <button type="submit" class="submit-button">Submit Request</button>
-                            </form>
-                        </div>
-                    </div>
-                    
-                    <div class="photo-section">
-                        <div class="photo-card">
-                            <h3>Photo Gallery Manager</h3>
-                            <div class="upload-area">
-                                <div class="upload-zone">
-                                    <input type="file" id="photo-upload" multiple accept="image/*" class="file-input">
-                                    <label for="photo-upload" class="upload-label">
-                                        <div class="upload-content">
-                                            <span class="upload-icon">📸</span>
-                                            <p>Click to upload photos</p>
-                                            <p class="upload-hint">or drag and drop images here</p>
-                                        </div>
-                                    </label>
-                                </div>
-                            </div>
-                            
-                            <div class="gallery-manager">
-                                <h4>Uploaded Photos</h4>
-                                <div class="photo-grid" id="photo-grid">
-                                    <!-- Uploaded photos will appear here -->
-                                    <div class="photo-placeholder">
-                                        <p>No photos uploaded yet</p>
-                                        <p class="placeholder-hint">Upload images to manage your gallery</p>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="section-assignment">
-                                <h4>Assign Photos to Sections</h4>
-                                <div class="assignment-controls">
-                                    <select id="photo-section-select" class="section-select">
-                                        <option value="">Select section...</option>
-                                        <option value="hero">Hero Section</option>
-                                        <option value="rooms">Rooms</option>
-                                        <option value="retreats">Retreats</option>
-                                        <option value="experiences">Experiences</option>
-                                    </select>
-                                    <button id="assign-photo" class="assign-button">Assign Selected Photo</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- Footer -->
     <footer class="footer">

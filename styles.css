@@ -288,8 +288,8 @@ section {
 /* Rooms Section */
 .rooms-offerings {
     display: grid;
-    gap: 3rem;
-    margin-top: 3rem;
+    gap: 2rem;
+    margin-top: 2rem;
 }
 
 .room-offering {
@@ -299,14 +299,15 @@ section {
     align-items: center;
     max-width: 1000px;
     margin: 0 auto;
+    padding: 0 1rem;
 }
 
-.room-offering:nth-child(even) {
-    direction: rtl;
+.room-offering:nth-child(even) .room-image {
+    order: 2;
 }
 
-.room-offering:nth-child(even) * {
-    direction: ltr;
+.room-offering:nth-child(even) .room-content {
+    order: 1;
 }
 
 .room-image {
@@ -317,9 +318,10 @@ section {
 
 .room-img {
     width: 100%;
-    height: 300px;
+    height: 280px;
     object-fit: cover;
     transition: transform 0.3s ease;
+    display: block;
 }
 
 .room-img:hover {
@@ -342,25 +344,26 @@ section {
 /* Retreats Section */
 .retreats-offerings {
     display: grid;
-    gap: 4rem;
-    margin-top: 3rem;
+    gap: 2rem;
+    margin-top: 2rem;
 }
 
 .retreat-offering {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 3rem;
+    gap: 2rem;
     align-items: center;
     max-width: 1000px;
     margin: 0 auto;
+    padding: 0 1rem;
 }
 
-.retreat-offering:nth-child(even) {
-    direction: rtl;
+.retreat-offering:nth-child(even) .retreat-image {
+    order: 2;
 }
 
-.retreat-offering:nth-child(even) * {
-    direction: ltr;
+.retreat-offering:nth-child(even) .retreat-content {
+    order: 1;
 }
 
 .retreat-image {
@@ -371,8 +374,9 @@ section {
 
 .retreat-img {
     width: 100%;
-    height: 350px;
+    height: 280px;
     object-fit: cover;
+    display: block;
 }
 
 .retreat-content {
@@ -434,8 +438,9 @@ section {
 
 .wedding-img {
     width: 100%;
-    height: 400px;
+    height: 280px;
     object-fit: cover;
+    display: block;
 }
 
 .wedding-content {
@@ -797,11 +802,12 @@ section {
 
 .experience-img {
     width: 100%;
-    height: 200px;
+    height: 180px;
     object-fit: cover;
     border-radius: 8px;
     margin-bottom: 1rem;
     transition: transform 0.3s ease;
+    display: block;
 }
 
 .experience-img:hover {
