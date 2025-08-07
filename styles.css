@@ -1,4 +1,13 @@
 /* Reset and Base Styles */
+:root {
+    --golden-honey: #B5956B;
+    --soft-pink: #E6D3CB;
+    --sage-green: #A5A885;
+    --deep-brown: #5C4A3A;
+    --cream: #F8F6F4;
+    --text-dark: #2c2c2c;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -9,8 +18,8 @@ body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     font-size: 16px;
     line-height: 1.7;
-    color: #2c2c2c;
-    background-color: #fefefe;
+    color: var(--text-dark);
+    background-color: var(--cream);
     font-weight: 300;
 }
 
@@ -31,7 +40,7 @@ h1, h2, h3, h4 {
     font-family: 'Crimson Text', Georgia, serif;
     font-weight: 400;
     line-height: 1.3;
-    color: #1a1a1a;
+    color: var(--deep-brown);
 }
 
 h1 {
@@ -117,7 +126,7 @@ p {
 }
 
 .nav-cta .book-now {
-    background: #1a1a1a;
+    background: var(--sage-green);
     color: #fefefe;
     padding: 12px 24px;
     border-radius: 0;
@@ -126,12 +135,13 @@ p {
     letter-spacing: 0.5px;
     text-transform: uppercase;
     transition: all 0.3s ease;
-    border: 1px solid #1a1a1a;
+    border: 1px solid var(--sage-green);
 }
 
 .nav-cta .book-now:hover {
-    background: transparent;
-    color: #1a1a1a;
+    background: var(--deep-brown);
+    color: #fefefe;
+    border-color: var(--deep-brown);
 }
 
 .hamburger {
@@ -154,7 +164,19 @@ p {
     display: flex;
     align-items: center;
     padding: 140px 0 80px;
-    background: #fefefe;
+    background: linear-gradient(135deg, var(--cream), #F5F2EE);
+    position: relative;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 20% 80%, rgba(181, 149, 107, 0.1) 0%, transparent 50%);
+    pointer-events: none;
 }
 
 .hero-container {
@@ -174,10 +196,11 @@ p {
     font-family: 'Crimson Text', Georgia, serif;
     font-size: clamp(3rem, 6vw, 5rem);
     font-weight: 400;
-    color: #1a1a1a;
+    color: var(--deep-brown);
     margin-bottom: 2rem;
     line-height: 1.2;
     letter-spacing: -0.02em;
+    text-shadow: 0 2px 20px rgba(181, 149, 107, 0.1);
 }
 
 .hero-description {
@@ -197,7 +220,7 @@ p {
 
 .cta-button {
     display: inline-block;
-    background: #1a1a1a;
+    background: var(--golden-honey);
     color: #fefefe;
     padding: 16px 32px;
     text-decoration: none;
@@ -205,13 +228,14 @@ p {
     font-weight: 400;
     letter-spacing: 0.5px;
     text-transform: uppercase;
-    border: 1px solid #1a1a1a;
+    border: 1px solid var(--golden-honey);
     transition: all 0.3s ease;
 }
 
 .cta-button:hover {
-    background: transparent;
-    color: #1a1a1a;
+    background: var(--deep-brown);
+    color: #fefefe;
+    border-color: var(--deep-brown);
 }
 
 .hero-image {
@@ -261,18 +285,20 @@ section {
 
 .text-link {
     font-size: 0.95rem;
-    color: #1a1a1a;
+    color: var(--deep-brown);
     text-decoration: underline;
     text-decoration-thickness: 1px;
     text-underline-offset: 4px;
+    text-decoration-color: var(--golden-honey);
     font-weight: 400;
     letter-spacing: 0.3px;
     transition: all 0.3s ease;
 }
 
 .text-link:hover {
-    color: #4a4a4a;
+    color: var(--golden-honey);
     text-decoration-thickness: 2px;
+    text-decoration-color: var(--deep-brown);
 }
 
 /* Image Placeholders - Elegant Style */
@@ -309,12 +335,18 @@ section {
     width: 100%;
     height: 60vh;
     object-fit: cover;
-    border-radius: 8px;
+    border-radius: 12px;
+    box-shadow: 0 20px 60px rgba(181, 149, 107, 0.15);
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hero-img:hover {
+    transform: scale(1.02);
 }
 
 /* Wellness Section */
 .wellness {
-    background: #fafaf9;
+    background: var(--soft-pink);
     padding: 120px 0;
 }
 
@@ -394,8 +426,17 @@ section {
 
 /* Experiences Section */
 .experiences {
-    background: #fafaf9;
+    background: linear-gradient(135deg, var(--sage-green), #B8B39A);
     padding: 120px 0;
+}
+
+.experiences h2,
+.experiences h4 {
+    color: white;
+}
+
+.experiences p {
+    color: rgba(255, 255, 255, 0.9);
 }
 
 .experience-grid {
@@ -423,8 +464,17 @@ section {
 
 /* Contact Section - The Newt Style */
 .contact {
-    background: #fefefe;
+    background: linear-gradient(135deg, var(--golden-honey), #C9A678);
     padding: 120px 0;
+}
+
+.contact h2,
+.contact h4 {
+    color: white;
+}
+
+.contact p {
+    color: rgba(255, 255, 255, 0.9);
 }
 
 .contact-details {
@@ -480,8 +530,8 @@ section {
 
 /* Footer - The Newt Style */
 .footer {
-    background: #fefefe;
-    border-top: 1px solid rgba(42, 42, 42, 0.08);
+    background: var(--deep-brown);
+    color: #fefefe;
     padding: 80px 0 40px;
 }
 
@@ -504,14 +554,14 @@ section {
     font-family: 'Crimson Text', Georgia, serif;
     font-size: 1.5rem;
     font-weight: 400;
-    color: #1a1a1a;
+    color: #fefefe;
     margin-bottom: 1rem;
     letter-spacing: 0.5px;
 }
 
 .footer-brand p {
     font-size: 1rem;
-    color: #4a4a4a;
+    color: rgba(255, 255, 255, 0.8);
     line-height: 1.6;
     font-weight: 300;
 }
@@ -524,7 +574,7 @@ section {
 
 .footer-links a {
     font-size: 0.95rem;
-    color: #4a4a4a;
+    color: rgba(255, 255, 255, 0.8);
     text-decoration: none;
     font-weight: 400;
     letter-spacing: 0.3px;
@@ -532,7 +582,7 @@ section {
 }
 
 .footer-links a:hover {
-    color: #1a1a1a;
+    color: var(--golden-honey);
 }
 
 .footer-bottom {
@@ -547,7 +597,7 @@ section {
 
 .footer-bottom p {
     font-size: 0.9rem;
-    color: #8a8a8a;
+    color: rgba(255, 255, 255, 0.6);
     margin: 0;
     letter-spacing: 0.3px;
 }
