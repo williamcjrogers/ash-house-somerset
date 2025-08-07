@@ -20,6 +20,7 @@
                 <li><a href="#treatments">Wellness</a></li>
                 <li><a href="#rooms">Rooms</a></li>
                 <li><a href="#retreats">Retreats</a></li>
+                <li><a href="#micro-weddings">Micro Weddings</a></li>
                 <li><a href="#packages">Build Your Package</a></li>
                 <li><a href="#experiences">Experiences</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -179,6 +180,192 @@
                                 </ul>
                             </div>
                             <a href="#packages" class="text-link">Build Your Experience</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Micro Weddings Section -->
+    <section id="micro-weddings" class="micro-weddings">
+        <div class="container">
+            <div class="section-content">
+                <h2 class="section-title">Intimate Micro Weddings</h2>
+                <div class="section-description">
+                    <p>Celebrate your love story in the elegance of our Georgian manor house. Our intimate micro wedding experiences are crafted for couples seeking a refined, personal celebration surrounded by Somerset's timeless beauty.</p>
+                </div>
+                
+                <div class="wedding-offerings">
+                    <div class="wedding-hero">
+                        <div class="wedding-image">
+                            <img src="images/Screenshot 2025-08-07 132650.jpg" alt="Micro Wedding at Ash House" class="wedding-img">
+                        </div>
+                        <div class="wedding-content">
+                            <h3 class="wedding-title">Ceremonies for up to 30 Guests</h3>
+                            <p class="wedding-description">Exchange vows in our enchanting walled garden or within the grand reception rooms of our Georgian manor house. Each celebration is tailored to reflect your unique love story.</p>
+                            
+                            <div class="wedding-features">
+                                <div class="feature-grid">
+                                    <div class="feature-item">
+                                        <h4>Ceremony Venues</h4>
+                                        <ul>
+                                            <li>Walled Garden Ceremony</li>
+                                            <li>Manor House Reception Rooms</li>
+                                            <li>Intimate Garden Pavilion</li>
+                                        </ul>
+                                    </div>
+                                    <div class="feature-item">
+                                        <h4>Included Services</h4>
+                                        <ul>
+                                            <li>Dedicated Wedding Coordinator</li>
+                                            <li>Seasonal Floral Arrangements</li>
+                                            <li>Photography Session</li>
+                                            <li>Champagne Reception</li>
+                                        </ul>
+                                    </div>
+                                    <div class="feature-item">
+                                        <h4>Culinary Experience</h4>
+                                        <ul>
+                                            <li>Multi-Course Wedding Breakfast</li>
+                                            <li>Artisan Wedding Cake</li>
+                                            <li>Local Wine & Champagne</li>
+                                            <li>Evening Canapés</li>
+                                        </ul>
+                                    </div>
+                                    <div class="feature-item">
+                                        <h4>Accommodation</h4>
+                                        <ul>
+                                            <li>Bridal Suite for the Couple</li>
+                                            <li>Guest Rooms Available</li>
+                                            <li>Breakfast for All Guests</li>
+                                            <li>Late Check-out</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="wedding-pricing">
+                                <div class="pricing-card">
+                                    <h4>Wedding Packages From</h4>
+                                    <div class="price">£8,500</div>
+                                    <p class="price-note">For up to 30 guests | Customizable to your vision</p>
+                                    <a href="#booking-calendar" class="cta-button">Check Availability</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Calendar Section -->
+    <section id="booking-calendar" class="booking-calendar">
+        <div class="container">
+            <div class="section-content">
+                <h2 class="section-title">Check Availability & Book</h2>
+                <div class="section-description">
+                    <p>View our availability and secure your preferred dates for your retreat, micro wedding, or bespoke sanctuary experience.</p>
+                </div>
+                
+                <div class="booking-system">
+                    <div class="calendar-container">
+                        <div class="calendar-header">
+                            <button id="prev-month" class="month-nav">‹</button>
+                            <h3 id="current-month">January 2025</h3>
+                            <button id="next-month" class="month-nav">›</button>
+                        </div>
+                        
+                        <div class="calendar-grid">
+                            <div class="day-header">Sun</div>
+                            <div class="day-header">Mon</div>
+                            <div class="day-header">Tue</div>
+                            <div class="day-header">Wed</div>
+                            <div class="day-header">Thu</div>
+                            <div class="day-header">Fri</div>
+                            <div class="day-header">Sat</div>
+                            <!-- Calendar days will be generated by JavaScript -->
+                        </div>
+                        
+                        <div class="calendar-legend">
+                            <div class="legend-item">
+                                <div class="legend-color available"></div>
+                                <span>Available</span>
+                            </div>
+                            <div class="legend-item">
+                                <div class="legend-color booked"></div>
+                                <span>Booked</span>
+                            </div>
+                            <div class="legend-item">
+                                <div class="legend-color selected"></div>
+                                <span>Selected</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="booking-form">
+                        <div class="booking-card">
+                            <h3>Book Your Experience</h3>
+                            <form class="booking-form-content">
+                                <div class="form-group">
+                                    <label for="experience-type">Experience Type</label>
+                                    <select id="experience-type" name="experience">
+                                        <option value="">Select experience...</option>
+                                        <option value="wellness-retreat">Wellness Retreat</option>
+                                        <option value="creative-retreat">Creative Retreat</option>
+                                        <option value="micro-wedding">Micro Wedding</option>
+                                        <option value="custom-package">Custom Package</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="check-in">Check-in Date</label>
+                                    <input type="date" id="check-in" name="checkin" readonly>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="check-out">Check-out Date</label>
+                                    <input type="date" id="check-out" name="checkout" readonly>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="guests">Number of Guests</label>
+                                    <select id="guests" name="guests">
+                                        <option value="2">2 guests</option>
+                                        <option value="4">4 guests</option>
+                                        <option value="6">6 guests</option>
+                                        <option value="8">8 guests</option>
+                                        <option value="10">10 guests</option>
+                                        <option value="15">15 guests</option>
+                                        <option value="20">20 guests</option>
+                                        <option value="30">30 guests (Max)</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="full-name">Full Name</label>
+                                    <input type="text" id="full-name" name="name" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="email">Email Address</label>
+                                    <input type="email" id="email" name="email" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="phone">Phone Number</label>
+                                    <input type="tel" id="phone" name="phone">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="special-requests">Special Requests</label>
+                                    <textarea id="special-requests" name="requests" rows="4" placeholder="Any specific requirements or requests..."></textarea>
+                                </div>
+                                
+                                <button type="submit" class="booking-submit">Send Enquiry</button>
+                                <p class="booking-note">We'll respond within 24 hours with availability and pricing</p>
+                            </form>
                         </div>
                     </div>
                 </div>

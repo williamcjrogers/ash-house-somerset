@@ -315,3 +315,216 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
+// Booking Calendar Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const currentDate = new Date();
+    let currentMonth = currentDate.getMonth();
+    let currentYear = currentDate.getFullYear();
+    let selectedDates = [];
+    
+    const monthNames = [
+        "January", "February", "March", "April", "May", "June",
+        "July", "August", "September", "October", "November", "December"
+    ];
+    
+    // Sample booked dates (in a real app, this would come from your backend)
+    const bookedDates = [
+        '2025-01-15', '2025-01-16', '2025-01-17', // Sample wedding weekend
+        '2025-02-14', '2025-02-15', // Valentine's weekend
+        '2025-03-20', '2025-03-21', '2025-03-22', // Sample retreat
+    ];
+    
+    function generateCalendar(month, year) {
+        const firstDay = new Date(year, month, 1).getDay();
+        const daysInMonth = new Date(year, month + 1, 0).getDate();
+        const calendarGrid = document.querySelector('.calendar-grid');
+        const currentMonthElement = document.getElementById('current-month');
+        
+        // Update month/year display
+        if (currentMonthElement) {
+            currentMonthElement.textContent = `${monthNames[month]} ${year}`;
+        }
+        
+        if (!calendarGrid) return;
+        
+        // Clear existing calendar days (keep headers)
+        const existingDays = calendarGrid.querySelectorAll('.calendar-day');
+        existingDays.forEach(day => day.remove());
+        
+        // Add empty cells for days before the first day of the month
+        for (let i = 0; i < firstDay; i++) {
+            const emptyDay = document.createElement('div');
+            emptyDay.className = 'calendar-day empty';
+            calendarGrid.appendChild(emptyDay);
+        }
+        
+        // Add days of the month
+        for (let day = 1; day <= daysInMonth; day++) {
+            const dayElement = document.createElement('div');
+            dayElement.className = 'calendar-day';
+            dayElement.textContent = day;
+            
+            const dateString = `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+            const dayDate = new Date(year, month, day);
+            
+            // Check if date is in the past
+            if (dayDate < currentDate.setHours(0, 0, 0, 0)) {
+                dayElement.classList.add('past');
+                dayElement.style.opacity = '0.3';
+                dayElement.style.cursor = 'not-allowed';
+            }
+            // Check if date is booked
+            else if (bookedDates.includes(dateString)) {
+                dayElement.classList.add('booked');
+            }
+            // Available dates
+            else {
+                dayElement.classList.add('available');
+                dayElement.addEventListener('click', () => selectDate(dateString, dayElement));
+            }
+            
+            // Check if date is already selected
+            if (selectedDates.includes(dateString)) {
+                dayElement.classList.add('selected');
+            }
+            
+            calendarGrid.appendChild(dayElement);
+        }
+    }
+    
+    function selectDate(dateString, dayElement) {
+        if (selectedDates.length === 0) {
+            // First date selection (check-in)
+            selectedDates.push(dateString);
+            dayElement.classList.add('selected');
+            const checkinInput = document.getElementById('check-in');
+            if (checkinInput) checkinInput.value = dateString;
+        } else if (selectedDates.length === 1) {
+            // Second date selection (check-out)
+            const checkInDate = new Date(selectedDates[0]);
+            const clickedDate = new Date(dateString);
+            
+            if (clickedDate > checkInDate) {
+                selectedDates.push(dateString);
+                dayElement.classList.add('selected');
+                const checkoutInput = document.getElementById('check-out');
+                if (checkoutInput) checkoutInput.value = dateString;
+                
+                // Highlight dates in between
+                highlightDateRange();
+            } else {
+                // If clicked date is before check-in, reset and start over
+                clearSelectedDates();
+                selectedDates.push(dateString);
+                dayElement.classList.add('selected');
+                const checkinInput = document.getElementById('check-in');
+                const checkoutInput = document.getElementById('check-out');
+                if (checkinInput) checkinInput.value = dateString;
+                if (checkoutInput) checkoutInput.value = '';
+            }
+        } else {
+            // Reset selection
+            clearSelectedDates();
+            selectedDates.push(dateString);
+            dayElement.classList.add('selected');
+            const checkinInput = document.getElementById('check-in');
+            const checkoutInput = document.getElementById('check-out');
+            if (checkinInput) checkinInput.value = dateString;
+            if (checkoutInput) checkoutInput.value = '';
+        }
+    }
+    
+    function clearSelectedDates() {
+        selectedDates = [];
+        document.querySelectorAll('.calendar-day.selected').forEach(day => {
+            day.classList.remove('selected');
+        });
+    }
+    
+    function highlightDateRange() {
+        if (selectedDates.length === 2) {
+            const startDate = new Date(selectedDates[0]);
+            const endDate = new Date(selectedDates[1]);
+            
+            document.querySelectorAll('.calendar-day.available').forEach(day => {
+                const dayText = day.textContent;
+                if (dayText && dayText.trim()) {
+                    const dayDate = new Date(currentYear, currentMonth, parseInt(dayText));
+                    if (dayDate >= startDate && dayDate <= endDate) {
+                        day.classList.add('selected');
+                    }
+                }
+            });
+        }
+    }
+    
+    // Navigation buttons
+    const prevButton = document.getElementById('prev-month');
+    const nextButton = document.getElementById('next-month');
+    
+    if (prevButton) {
+        prevButton.addEventListener('click', () => {
+            currentMonth--;
+            if (currentMonth < 0) {
+                currentMonth = 11;
+                currentYear--;
+            }
+            generateCalendar(currentMonth, currentYear);
+        });
+    }
+    
+    if (nextButton) {
+        nextButton.addEventListener('click', () => {
+            currentMonth++;
+            if (currentMonth > 11) {
+                currentMonth = 0;
+                currentYear++;
+            }
+            generateCalendar(currentMonth, currentYear);
+        });
+    }
+    
+    // Booking form submission
+    const bookingForm = document.querySelector('.booking-form-content');
+    if (bookingForm) {
+        bookingForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const experienceInput = document.getElementById('experience-type');
+            const checkinInput = document.getElementById('check-in');
+            const checkoutInput = document.getElementById('check-out');
+            const guestsInput = document.getElementById('guests');
+            const nameInput = document.getElementById('full-name');
+            const emailInput = document.getElementById('email');
+            const phoneInput = document.getElementById('phone');
+            const requestsInput = document.getElementById('special-requests');
+            
+            const formData = {
+                experience: experienceInput ? experienceInput.value : '',
+                checkin: checkinInput ? checkinInput.value : '',
+                checkout: checkoutInput ? checkoutInput.value : '',
+                guests: guestsInput ? guestsInput.value : '',
+                name: nameInput ? nameInput.value : '',
+                email: emailInput ? emailInput.value : '',
+                phone: phoneInput ? phoneInput.value : '',
+                requests: requestsInput ? requestsInput.value : ''
+            };
+            
+            if (!formData.experience || !formData.checkin || !formData.name || !formData.email) {
+                alert('Please fill in all required fields and select your dates.');
+                return;
+            }
+            
+            // In a real app, you would send this to your backend
+            alert(`Booking enquiry submitted!\\n\\nExperience: ${formData.experience}\\nCheck-in: ${formData.checkin}\\nGuests: ${formData.guests}\\n\\nWe'll respond within 24 hours!`);
+            
+            // Clear form
+            bookingForm.reset();
+            clearSelectedDates();
+        });
+    }
+    
+    // Initialize calendar
+    generateCalendar(currentMonth, currentYear);
+});

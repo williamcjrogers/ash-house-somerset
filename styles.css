@@ -1314,3 +1314,319 @@ html {
     color: var(--golden-honey);
     font-weight: 500;
 }
+
+
+/* Micro Weddings Section */
+.micro-weddings {
+    background: linear-gradient(135deg, var(--cream), rgba(230, 211, 203, 0.1));
+    padding: 140px 0;
+}
+
+.wedding-hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+    margin-top: 2rem;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.wedding-img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(181, 149, 107, 0.15);
+}
+
+.wedding-title {
+    font-family: 'Crimson Text', Georgia, serif;
+    font-size: 2.2rem;
+    color: var(--deep-brown);
+    margin-bottom: 2rem;
+}
+
+.wedding-description {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #4a4a4a;
+    margin-bottom: 3rem;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.feature-item h4 {
+    font-family: 'Crimson Text', Georgia, serif;
+    font-size: 1.3rem;
+    color: var(--golden-honey);
+    margin-bottom: 1rem;
+}
+
+.feature-item ul {
+    list-style: none;
+    padding: 0;
+}
+
+.feature-item li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(181, 149, 107, 0.2);
+    color: #4a4a4a;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.feature-item li:last-child {
+    border-bottom: none;
+}
+
+.feature-item li:before {
+    content: '✓';
+    color: var(--golden-honey);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+.wedding-pricing {
+    text-align: center;
+}
+
+.pricing-card {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 3rem;
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.pricing-card h4 {
+    font-size: 1.2rem;
+    color: var(--deep-brown);
+    margin-bottom: 1rem;
+}
+
+.price {
+    font-family: 'Crimson Text', Georgia, serif;
+    font-size: 3rem;
+    color: var(--golden-honey);
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.price-note {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 2rem;
+}
+
+/* Booking Calendar Section */
+.booking-calendar {
+    background: var(--soft-pink);
+    padding: 140px 0;
+}
+
+.booking-system {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    margin-top: 2rem;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.calendar-container {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 3rem;
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.calendar-header h3 {
+    font-family: 'Crimson Text', Georgia, serif;
+    font-size: 1.8rem;
+    color: var(--deep-brown);
+    margin: 0;
+}
+
+.month-nav {
+    background: var(--golden-honey);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: background 0.3s ease;
+}
+
+.month-nav:hover {
+    background: var(--deep-brown);
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 1px;
+    background: rgba(181, 149, 107, 0.2);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 2rem;
+}
+
+.day-header {
+    background: var(--deep-brown);
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.calendar-day {
+    background: white;
+    padding: 1rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.calendar-day:hover {
+    background: rgba(181, 149, 107, 0.1);
+}
+
+.calendar-day.available {
+    background: rgba(165, 168, 133, 0.1);
+}
+
+.calendar-day.booked {
+    background: rgba(255, 0, 0, 0.1);
+    color: #999;
+    cursor: not-allowed;
+}
+
+.calendar-day.selected {
+    background: var(--golden-honey);
+    color: white;
+}
+
+.calendar-legend {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.legend-color {
+    width: 16px;
+    height: 16px;
+    border-radius: 4px;
+}
+
+.legend-color.available {
+    background: rgba(165, 168, 133, 0.3);
+}
+
+.legend-color.booked {
+    background: rgba(255, 0, 0, 0.3);
+}
+
+.legend-color.selected {
+    background: var(--golden-honey);
+}
+
+.booking-card {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 3rem;
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+}
+
+.booking-card h3 {
+    font-family: 'Crimson Text', Georgia, serif;
+    font-size: 2rem;
+    color: var(--deep-brown);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.booking-form-content .form-group {
+    margin-bottom: 2rem;
+}
+
+.booking-form-content label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: var(--deep-brown);
+}
+
+.booking-form-content input,
+.booking-form-content select,
+.booking-form-content textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid rgba(181, 149, 107, 0.3);
+    border-radius: 8px;
+    font-size: 1rem;
+    background: rgba(255, 255, 255, 0.8);
+    transition: border-color 0.3s ease;
+}
+
+.booking-form-content input:focus,
+.booking-form-content select:focus,
+.booking-form-content textarea:focus {
+    outline: none;
+    border-color: var(--golden-honey);
+    box-shadow: 0 0 0 2px rgba(181, 149, 107, 0.2);
+}
+
+.booking-submit {
+    width: 100%;
+    padding: 1rem 2rem;
+    background: var(--golden-honey);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 1rem;
+}
+
+.booking-submit:hover {
+    background: var(--deep-brown);
+    transform: translateY(-2px);
+}
+
+.booking-note {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #666;
+    margin: 0;
+}
