@@ -98,9 +98,39 @@ p {
     font-family: 'Crimson Text', Georgia, serif;
     font-size: 1.5rem;
     font-weight: 400;
-    color: #1a1a1a;
+    color: var(--deep-brown);
     text-decoration: none;
     letter-spacing: 0.5px;
+    background: linear-gradient(45deg, var(--golden-honey), var(--deep-brown));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.logo a:hover {
+    background: linear-gradient(45deg, var(--deep-brown), var(--golden-honey));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    transform: translateY(-1px);
+}
+
+.logo a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--golden-honey), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.logo a:hover::after {
+    opacity: 1;
 }
 
 .nav-menu {
