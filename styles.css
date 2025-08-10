@@ -1055,6 +1055,173 @@ section {
     margin: 0;
 }
 
+/* Stay Section Styles */
+.showcase-grid {
+    display: grid;
+    gap: 3rem;
+    margin-top: 2rem;
+}
+
+.showcase-item {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.showcase-item:nth-child(even) .showcase-image {
+    order: 2;
+}
+
+.showcase-item:nth-child(even) .showcase-content {
+    order: 1;
+}
+
+.showcase-image {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.showcase-img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.showcase-img:hover {
+    transform: scale(1.05);
+}
+
+.showcase-content {
+    text-align: left;
+    padding: 1rem;
+}
+
+.feature-highlights {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    margin: 2rem 0;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.highlight-item {
+    text-align: center;
+    padding: 1rem;
+}
+
+.highlight-item h4 {
+    color: var(--golden-honey);
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.stay-cta {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+/* Wellness Section Styles */
+.wellness-grid {
+    display: grid;
+    gap: 3rem;
+    margin-top: 2rem;
+}
+
+.wellness-item {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.wellness-item:nth-child(even) .wellness-image {
+    order: 2;
+}
+
+.wellness-item:nth-child(even) .wellness-content {
+    order: 1;
+}
+
+.wellness-image {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.wellness-img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+}
+
+.wellness-content {
+    text-align: left;
+    padding: 1rem;
+}
+
+.wellness-content .price {
+    display: inline-block;
+    background: var(--golden-honey);
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-top: 0.5rem;
+}
+
+.wellness-packages {
+    margin-top: 3rem;
+    text-align: center;
+}
+
+.package-options {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.package-item {
+    background: rgba(181, 149, 107, 0.1);
+    padding: 2rem 1rem;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.package-item h4 {
+    margin-bottom: 0.5rem;
+}
+
+.package-price {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--golden-honey);
+    margin-top: 1rem;
+}
+
+.restore-cta {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
 /* Mobile Styles */
 @media (max-width: 768px) {
     .hero-container,
