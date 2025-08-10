@@ -560,8 +560,22 @@ section {
     margin-top: var(--space-md);
 }
 
+/* === WEDDING SECTION === */
+.wedding-packages {
+    margin-top: var(--space-xl);
+    text-align: center;
+}
+
+.wedding-packages h3 {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: var(--deep-forest);
+    margin-bottom: var(--space-lg);
+}
+
 /* === CTA SECTIONS === */
-.stay-cta, .restore-cta {
+.stay-cta, .restore-cta, .celebrate-cta {
     display: flex;
     gap: var(--space-md);
     justify-content: center;
@@ -604,6 +618,72 @@ section {
     color: var(--pure-white);
 }
 
+/* === LOADING ANIMATIONS === */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-content {
+    animation: fadeInUp 1s ease 0.5s both;
+}
+
+.hero-badge {
+    animation: fadeInUp 1s ease 0.7s both;
+}
+
+.hero-title {
+    animation: fadeInUp 1s ease 0.9s both;
+}
+
+.hero-tagline {
+    animation: fadeInUp 1s ease 1.1s both;
+}
+
+.hero-description {
+    animation: fadeInUp 1s ease 1.3s both;
+}
+
+.hero-cta {
+    animation: fadeInUp 1s ease 1.5s both;
+}
+
+/* === IMPROVED IMAGES === */
+.showcase-img, .wellness-img {
+    filter: contrast(1.05) brightness(1.02);
+}
+
+.showcase-image::after, .wellness-image::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(184, 151, 90, 0.1) 0%, transparent 50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.showcase-image:hover::after, .wellness-image:hover::after {
+    opacity: 1;
+}
+
+/* === ENHANCED TYPOGRAPHY === */
+.section-description {
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--stone-grey);
+}
+
 /* === MOBILE RESPONSIVE === */
 @media (max-width: 768px) {
     :root {
@@ -621,6 +701,14 @@ section {
         flex-direction: column;
         align-items: center;
         gap: var(--space-sm);
+    }
+    
+    .hero-title-main {
+        font-size: clamp(2.5rem, 10vw, 4rem);
+    }
+    
+    .hero-title-sub {
+        font-size: clamp(1.2rem, 6vw, 2rem);
     }
     
     .showcase-item, .wellness-item {
