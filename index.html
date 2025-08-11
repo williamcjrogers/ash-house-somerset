@@ -3,262 +3,427 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ash House Somerset | Georgian Manor Estate - Updated</title>
-    <meta name="description" content="A Georgian Manor Estate in Somerset offering luxury accommodation, intimate celebrations, and transformative wellness experiences.">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <title>Ash House Somerset | Georgian Manor Estate</title>
+    <meta name="description" content="A Georgian Manor Estate in Somerset offering luxury accommodation, intimate celebrations, and creative experiences.">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Source+Sans+Pro:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="ultra-luxury.css">
 </head>
-<body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="logo">
-                <a href="#home">Ash House Somerset</a>
+<body class="loading">
+    
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="preloader-content">
+            <div class="estate-crest">
+                <div class="crest-circle"></div>
+                <div class="crest-text">ASH HOUSE</div>
+                <div class="crest-subtitle">EST. 1670</div>
             </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="ultra-nav" id="navigation">
+        <div class="nav-wrapper">
+            <div class="nav-brand">
+                <a href="index.html" class="brand-link">
+                    <div class="brand-crest">
+                        <div class="crest-symbol"></div>
+                    </div>
+                    <div class="brand-text">
+                        <span class="brand-primary">Ash House</span>
+                        <span class="brand-secondary">Somerset</span>
+                    </div>
+                </a>
+            </div>
+            
             <ul class="nav-menu">
-                <li><a href="#stay">STAY</a></li>
-                <li><a href="#host">HOST</a></li>
-                <li><a href="#create">CREATE</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li class="nav-item">
+                    <a href="stay.html" class="nav-link">
+                        <span class="link-text">Stay</span>
+                        <span class="link-subtitle">Luxury & Wellness</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="host.html" class="nav-link">
+                        <span class="link-text">Host</span>
+                        <span class="link-subtitle">Celebrations</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="create.html" class="nav-link">
+                        <span class="link-text">Create</span>
+                        <span class="link-subtitle">Film & Photography</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">
+                        <span class="link-text">Contact</span>
+                        <span class="link-subtitle">Get In Touch</span>
+                    </a>
+                </li>
             </ul>
+            
+            <div class="nav-actions">
+                <a href="https://www.airbnb.co.uk/rooms/21547447" class="reserve-btn" target="_blank">
+                    <span>Reserve</span>
+                </a>
+            </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-background">
-            <img src="images/manor-exterior-moody-evening.jpg" alt="Ash House Somerset" class="hero-bg-image">
+    <!-- Hero Masterpiece -->
+    <section class="hero-masterpiece">
+        <div class="hero-media-stack">
+            <div class="hero-video-container">
+                <img src="images/Outdoor dining.jpeg" alt="Ash House Somerset Estate" class="hero-primary-image">
+            </div>
+            <div class="hero-gradient-overlay"></div>
+            <div class="hero-texture-overlay"></div>
         </div>
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <div class="hero-badge">Est. 17th Century</div>
-            <h1 class="hero-title">
-                <span class="hero-title-main">Ash House</span>
-                <span class="hero-title-sub">Somerset</span>
-            </h1>
-            <p class="hero-tagline">Where wellness, celebration, and creativity flourish</p>
+        
+        <div class="hero-composition">
+            <div class="hero-content-wrapper">
+                <div class="hero-badge-luxury">
+                    <span class="badge-line"></span>
+                    <span class="badge-text">Georgian Manor Estate</span>
+                    <span class="badge-line"></span>
+                </div>
+                
+                <h1 class="hero-title-masterpiece">
+                    <span class="title-word" data-word="where">Where</span>
+                    <span class="title-word" data-word="extraordinary">Extraordinary</span>
+                    <span class="title-word" data-word="unfolds">Unfolds</span>
+                </h1>
+                
+                <div class="hero-subtitle-wrapper">
+                    <p class="hero-subtitle-luxury">A 17th-century Georgian manor estate in Somerset's countryside, where luxury accommodation, intimate celebrations, and creative endeavours converge in perfect harmony</p>
+                </div>
+                
+                <div class="hero-experience-pillars">
+                    <div class="pillar-card-mini" data-experience="stay">
+                        <div class="pillar-icon-luxury">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                                <polyline points="9,22 9,12 15,12 15,22"/>
+                            </svg>
+                        </div>
+                        <h3>Stay</h3>
+                        <p>Luxury retreats & wellness</p>
+                        <span class="pillar-price">From £400</span>
+                    </div>
+                    
+                    <div class="pillar-card-mini" data-experience="host">
+                        <div class="pillar-icon-luxury">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <circle cx="12" cy="8" r="7"/>
+                                <polyline points="8.21,13.89 7,23 12,20 17,23 15.79,13.88"/>
+                            </svg>
+                        </div>
+                        <h3>Host</h3>
+                        <p>Intimate celebrations</p>
+                        <span class="pillar-price">From £2,500</span>
+                    </div>
+                    
+                    <div class="pillar-card-mini" data-experience="create">
+                        <div class="pillar-icon-luxury">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
+                                <circle cx="12" cy="13" r="4"/>
+                            </svg>
+                        </div>
+                        <h3>Create</h3>
+                        <p>Film & photography</p>
+                        <span class="pillar-price">From £500</span>
+                    </div>
+                </div>
+                
+                <div class="hero-actions-luxury">
+                    <a href="#estate-story" class="btn-primary-luxury">
+                        <span class="btn-text">Discover Our Estate</span>
+                        <span class="btn-arrow">→</span>
+                    </a>
+                    <a href="stay.html" class="btn-secondary-luxury">
+                        <span class="btn-text">Plan Your Stay</span>
+                    </a>
+                </div>
+            </div>
             
-            <div class="pillars-grid">
-                <div class="pillar stay">
-                    <div class="pillar-color ochre"></div>
-                    <h3>STAY</h3>
-                    <p>Wellness retreats & luxury accommodation</p>
-                    <a href="#stay" class="pillar-cta">Explore</a>
-                </div>
-                <div class="pillar host">
-                    <div class="pillar-color peach"></div>
-                    <h3>HOST</h3>
-                    <p>Micro-weddings & intimate celebrations</p>
-                    <a href="#host" class="pillar-cta">Explore</a>
-                </div>
-                <div class="pillar create">
-                    <div class="pillar-color sage"></div>
-                    <h3>CREATE</h3>
-                    <p>Film location & creative workshops</p>
-                    <a href="#create" class="pillar-cta">Explore</a>
+            <div class="hero-scroll-invitation">
+                <div class="scroll-indicator-luxury">
+                    <span class="scroll-text">Explore</span>
+                    <div class="scroll-line-animated"></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- STAY Section -->
-    <section id="stay" class="pillar-section stay">
-        <div class="container">
-            <div class="section-content">
-                <div class="section-badge">STAY Pillar</div>
-                <h2 class="section-title">Wellness Retreats & Luxury Accommodation</h2>
-                <p class="section-description">Experience complete privacy in our Georgian Annexe and manor grounds. Wellness tourism is up 79% annually as people seek authentic restoration experiences.</p>
-                
-                <div class="pricing-summary">
-                    <div class="price-item">
-                        <span class="price">£400-£600</span>
-                        <span class="period">per night</span>
-                        <small>Exclusive use accommodation</small>
-                    </div>
-                    <div class="price-item">
-                        <span class="price">£800-£1,000</span>
-                        <span class="period">per person</span>
-                        <small>Retreat packages</small>
-                    </div>
+    <!-- Estate Heritage Story -->
+    <section id="estate-story" class="heritage-narrative">
+        <div class="narrative-container">
+            <div class="narrative-introduction">
+                <div class="section-overture">
+                    <span class="overture-line"></span>
+                    <span class="overture-text">Our Heritage</span>
+                    <span class="overture-line"></span>
                 </div>
+                <h2 class="narrative-title">A Living Legacy</h2>
+                <p class="narrative-lead">Three and a half centuries of stories, now yours to write</p>
             </div>
             
-            <div class="showcase-grid">
-                <div class="showcase-item">
-                    <div class="showcase-image">
-                        <img src="images/luxury-bathroom.jpg" alt="Luxury copper bath" class="showcase-img">
+            <div class="heritage-composition">
+                <div class="heritage-visual-stack">
+                    <div class="heritage-primary-visual">
+                        <img src="images/manor-exterior-moody-evening.jpg" alt="Ash House Somerset at twilight" class="heritage-image">
+                        <div class="heritage-image-frame"></div>
                     </div>
-                    <div class="showcase-content">
-                        <h3>Luxury Accommodation</h3>
-                        <p>4 spacious bedrooms with Super King beds, Egyptian cotton linens, and a stunning copper bathtub with walk-in shower.</p>
+                    <div class="heritage-accent-visual">
+                        <img src="images/Terrace.jpeg" alt="Estate terraces" class="accent-image">
                     </div>
                 </div>
                 
-                <div class="showcase-item">
-                    <div class="showcase-content">
-                        <h3>Wellness Facilities</h3>
-                        <p>Sauna & ice plunge, professional massage treatments, yoga sessions in beautiful Georgian rooms.</p>
+                <div class="heritage-narrative-content">
+                    <div class="narrative-text-block">
+                        <h3 class="text-block-title">Georgian Grandeur</h3>
+                        <p class="text-block-content">Built in the 17th century during the reign of Charles II, Ash House Somerset stands as one of the finest examples of Queen Anne architecture in the West Country. Our limestone façade and original Georgian windows have witnessed centuries of English history.</p>
                     </div>
-                    <div class="showcase-image">
-                        <img src="images/spa-therapy.jpg" alt="Wellness treatments" class="showcase-img">
+                    
+                    <div class="narrative-text-block">
+                        <h3 class="text-block-title">Modern Renaissance</h3>
+                        <p class="text-block-content">Today, we've carefully restored every period feature while seamlessly integrating contemporary luxury. From our authentic Finnish sauna to Egyptian cotton linens, every detail honors our heritage while embracing modern comfort.</p>
+                    </div>
+                    
+                    <div class="heritage-statistics">
+                        <div class="stat-item">
+                            <span class="stat-number">1670</span>
+                            <span class="stat-label">Established</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">2</span>
+                            <span class="stat-label">Private Acres</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">8</span>
+                            <span class="stat-label">Guest Capacity</span>
+                        </div>
                     </div>
                 </div>
-            </div>
-            
-            <div class="stay-cta">
-                <a href="https://www.airbnb.co.uk/rooms/21547447" class="cta-button" target="_blank">Book on Airbnb</a>
-                <a href="#contact" class="text-link">Enquire About Retreats</a>
             </div>
         </div>
     </section>
 
-    <!-- HOST Section -->
-    <section id="host" class="pillar-section host">
-        <div class="container">
-            <div class="section-content">
-                <div class="section-badge">HOST Pillar</div>
-                <h2 class="section-title">Micro-Wedding Specialists</h2>
-                <p class="section-description">Micro-wedding searches are up 100% as couples seek intimate, personalized celebrations. We offer venue-only hire with complete customization freedom.</p>
+    <!-- Experiences Showcase -->
+    <section class="experiences-showcase">
+        <div class="showcase-container">
+            <div class="showcase-header">
+                <div class="section-overture">
+                    <span class="overture-line"></span>
+                    <span class="overture-text">Three Experiences</span>
+                    <span class="overture-line"></span>
+                </div>
+                <h2 class="showcase-title">Curated for Connoisseurs</h2>
+            </div>
+            
+            <div class="experiences-grid-luxury">
+                <!-- Stay Experience -->
+                <article class="experience-card-masterpiece" data-experience="stay">
+                    <div class="card-visual-container">
+                        <img src="images/Sauna.jpeg" alt="Wellness sanctuary" class="card-image">
+                        <div class="card-overlay-gradient"></div>
+                        <div class="card-content-overlay">
+                            <div class="card-badge">Stay</div>
+                            <h3 class="card-title">Transformative Wellness</h3>
+                            <p class="card-description">Luxury accommodation meets holistic restoration in our Georgian annexe</p>
+                        </div>
+                    </div>
+                    <div class="card-details">
+                        <div class="card-features">
+                            <span class="feature-item">4 Luxury Bedrooms</span>
+                            <span class="feature-item">Finnish Sauna</span>
+                            <span class="feature-item">Private Grounds</span>
+                        </div>
+                        <div class="card-pricing">
+                            <span class="price-from">From</span>
+                            <span class="price-amount">£400</span>
+                            <span class="price-period">per night</span>
+                        </div>
+                        <a href="stay.html" class="card-action">
+                            <span>Explore Stays</span>
+                            <span class="action-arrow">→</span>
+                        </a>
+                    </div>
+                </article>
                 
-                <div class="micro-wedding-stats">
-                    <div class="stat">
-                        <h3>50</h3>
-                        <p>Guest capacity</p>
+                <!-- Host Experience -->
+                <article class="experience-card-masterpiece" data-experience="host">
+                    <div class="card-visual-container">
+                        <img src="images/Wedding 4.jpeg" alt="Intimate wedding celebration" class="card-image">
+                        <div class="card-overlay-gradient"></div>
+                        <div class="card-content-overlay">
+                            <div class="card-badge">Host</div>
+                            <h3 class="card-title">Intimate Celebrations</h3>
+                            <p class="card-description">Micro-weddings and private events in authentic Georgian settings</p>
+                        </div>
                     </div>
-                    <div class="stat">
-                        <h3>£2,500</h3>
-                        <p>Starting venue fee</p>
+                    <div class="card-details">
+                        <div class="card-features">
+                            <span class="feature-item">Up to 50 Guests</span>
+                            <span class="feature-item">Venue-Only Packages</span>
+                            <span class="feature-item">Complete Privacy</span>
+                        </div>
+                        <div class="card-pricing">
+                            <span class="price-from">From</span>
+                            <span class="price-amount">£2,500</span>
+                            <span class="price-period">per event</span>
+                        </div>
+                        <a href="host.html" class="card-action">
+                            <span>Plan Celebration</span>
+                            <span class="action-arrow">→</span>
+                        </a>
                     </div>
-                    <div class="stat">
-                        <h3>100%</h3>
-                        <p>Exclusive use</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="showcase-grid">
-                <div class="showcase-item">
-                    <div class="showcase-image">
-                        <img src="images/bridal-fashion-shoot-fireplace.jpg" alt="Wedding ceremony space" class="showcase-img">
-                    </div>
-                    <div class="showcase-content">
-                        <h3>Georgian Manor Ceremony</h3>
-                        <p>Exchange vows in our elegant drawing rooms with original period features and limestone fireplaces.</p>
-                    </div>
-                </div>
+                </article>
                 
-                <div class="showcase-item">
-                    <div class="showcase-content">
-                        <h3>Garden Reception</h3>
-                        <p>Celebrate in our private walled rose garden and courtyard spaces, perfect for intimate dining.</p>
+                <!-- Create Experience -->
+                <article class="experience-card-masterpiece" data-experience="create">
+                    <div class="card-visual-container">
+                        <img src="images/entrance-hall-velvet-settee.jpg" alt="Period interior for productions" class="card-image">
+                        <div class="card-overlay-gradient"></div>
+                        <div class="card-content-overlay">
+                            <div class="card-badge">Create</div>
+                            <h3 class="card-title">Cinematic Heritage</h3>
+                            <p class="card-description">Film location and photography in period Georgian interiors</p>
+                        </div>
                     </div>
-                    <div class="showcase-image">
-                        <img src="images/courtyard-garden-roses.jpg" alt="Garden reception space" class="showcase-img">
+                    <div class="card-details">
+                        <div class="card-features">
+                            <span class="feature-item">Period Authenticity</span>
+                            <span class="feature-item">Natural Light</span>
+                            <span class="feature-item">Professional Support</span>
+                        </div>
+                        <div class="card-pricing">
+                            <span class="price-from">From</span>
+                            <span class="price-amount">£500</span>
+                            <span class="price-period">per day</span>
+                        </div>
+                        <a href="create.html" class="card-action">
+                            <span>Creative Hire</span>
+                            <span class="action-arrow">→</span>
+                        </a>
                     </div>
-                </div>
-            </div>
-            
-            <div class="wedding-packages">
-                <h3>Venue-Only Packages</h3>
-                <div class="package-options">
-                    <div class="package">
-                        <h4>Intimate Ceremony</h4>
-                        <p>Up to 15 guests • Ceremony + reception space</p>
-                        <div class="price">From £2,500</div>
-                    </div>
-                    <div class="package">
-                        <h4>Manor Celebration</h4>
-                        <p>Up to 50 guests • Full day exclusive use</p>
-                        <div class="price">From £4,000</div>
-                    </div>
-                </div>
-                <p class="venue-only-note">Venue-only pricing. Bring your own caterers and suppliers for complete customization.</p>
-            </div>
-            
-            <div class="host-cta">
-                <a href="#contact" class="cta-button">Download Wedding Brochure</a>
-                <a href="#contact" class="text-link">Schedule Viewing</a>
+                </article>
             </div>
         </div>
     </section>
 
-    <!-- CREATE Section -->
-    <section id="create" class="pillar-section create">
-        <div class="container">
-            <div class="section-content">
-                <div class="section-badge">CREATE Pillar</div>
-                <h2 class="section-title">Film Location & Creative Hire</h2>
-                <p class="section-description">Our 18th-century Queen Anne manor with period features provides authentic settings for creative projects.</p>
+    <!-- Somerset Context -->
+    <section class="somerset-context">
+        <div class="context-container">
+            <div class="context-content">
+                <div class="section-overture">
+                    <span class="overture-line"></span>
+                    <span class="overture-text">Location</span>
+                    <span class="overture-line"></span>
+                </div>
+                <h2 class="context-title">Somerset's Crown Jewel</h2>
+                <p class="context-subtitle">Perfectly positioned among England's most celebrated destinations</p>
+                
+                <div class="location-markers">
+                    <div class="marker-item">
+                        <span class="marker-distance">15 minutes</span>
+                        <span class="marker-destination">The Newt Somerset</span>
+                        <span class="marker-description">Sister luxury estate</span>
+                    </div>
+                    <div class="marker-item">
+                        <span class="marker-distance">1 hour</span>
+                        <span class="marker-destination">Bath</span>
+                        <span class="marker-description">UNESCO World Heritage City</span>
+                    </div>
+                    <div class="marker-item">
+                        <span class="marker-distance">90 minutes</span>
+                        <span class="marker-destination">London</span>
+                        <span class="marker-description">By car or train</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final Invitation -->
+    <section class="final-invitation">
+        <div class="invitation-container">
+            <div class="invitation-content">
+                <h2 class="invitation-title">Begin Your Story</h2>
+                <p class="invitation-subtitle">Whether seeking restoration, celebration, or creative inspiration</p>
+                
+                <div class="invitation-actions">
+                    <a href="contact.html" class="btn-primary-luxury large">
+                        <span class="btn-text">Get In Touch</span>
+                        <span class="btn-arrow">→</span>
+                    </a>
+                    <a href="https://www.airbnb.co.uk/rooms/21547447" class="btn-secondary-luxury large" target="_blank">
+                        <span class="btn-text">Reserve Now</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Masterpiece -->
+    <footer class="footer-masterpiece">
+        <div class="footer-container">
+            <div class="footer-brand-section">
+                <div class="footer-brand">
+                    <div class="brand-crest-footer">
+                        <div class="crest-symbol"></div>
+                    </div>
+                    <div class="brand-text-footer">
+                        <span class="brand-primary">Ash House</span>
+                        <span class="brand-secondary">Somerset</span>
+                    </div>
+                </div>
+                <p class="footer-tagline">A Georgian manor estate where extraordinary stories unfold</p>
             </div>
             
-            <div class="showcase-grid">
-                <div class="showcase-item">
-                    <div class="showcase-image">
-                        <img src="images/entrance-hall-velvet-settee.jpg" alt="Period interior for filming" class="showcase-img">
-                    </div>
-                    <div class="showcase-content">
-                        <h3>Film & TV Location</h3>
-                        <p>Perfect for period dramas, indie films, and TV productions with authentic Georgian features.</p>
-                        <div class="pricing">Daily rates: £1,500-£2,000</div>
-                    </div>
+            <div class="footer-navigation">
+                <div class="footer-section">
+                    <h4 class="footer-section-title">Experiences</h4>
+                    <nav class="footer-links">
+                        <a href="stay.html">Luxury Stays</a>
+                        <a href="host.html">Celebrations</a>
+                        <a href="create.html">Creative Hire</a>
+                    </nav>
                 </div>
                 
-                <div class="showcase-item">
-                    <div class="showcase-content">
-                        <h3>Fashion & Editorial Shoots</h3>
-                        <p>Textured interiors with natural light ideal for fashion lookbooks and lifestyle brands.</p>
-                        <div class="pricing">Half-day: £500 | Full-day: £900</div>
-                    </div>
-                    <div class="showcase-image">
-                        <img src="images/main-staircase-tartan-runner.jpg" alt="Georgian staircase for photography" class="showcase-img">
-                    </div>
+                <div class="footer-section">
+                    <h4 class="footer-section-title">Estate</h4>
+                    <nav class="footer-links">
+                        <a href="about.html">Our Heritage</a>
+                        <a href="contact.html">Contact</a>
+                        <a href="#">Location</a>
+                    </nav>
                 </div>
-            </div>
-            
-            <div class="create-cta">
-                <a href="#contact" class="cta-button">Request Creative Hire Quote</a>
-                <a href="#contact" class="text-link">Production Facilities Info</a>
+                
+                <div class="footer-section">
+                    <h4 class="footer-section-title">Connect</h4>
+                    <nav class="footer-links">
+                        <a href="mailto:hello@ashhousesomerset.com">hello@ashhousesomerset.com</a>
+                        <a href="#">+44 (0) 1234 567890</a>
+                        <a href="#">Instagram</a>
+                    </nav>
+                </div>
             </div>
         </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <div class="section-content">
-                <h2 class="section-title">Contact Us</h2>
-                <p class="section-description">Ready to experience Ash House Somerset? Get in touch to discuss your stay, celebration, or creative project.</p>
-            </div>
-            
-            <div class="contact-info">
-                <div class="contact-item">
-                    <h4>General Enquiries</h4>
-                    <p>hello@ashhousesomerset.com</p>
-                </div>
-                <div class="contact-item">
-                    <h4>Wedding Bookings</h4>
-                    <p>weddings@ashhousesomerset.com</p>
-                </div>
-                <div class="contact-item">
-                    <h4>Film Location</h4>
-                    <p>location@ashhousesomerset.com</p>
+        
+        <div class="footer-legal">
+            <div class="legal-container">
+                <p>&copy; 2025 Ash House Somerset. All rights reserved.</p>
+                <div class="legal-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
                 </div>
             </div>
-            
-            <div class="location-info">
-                <h4>Visit Us</h4>
-                <p>Ash House, Ash, Somerset<br>
-                15 minutes from The Newt Somerset<br>
-                1 hour from Bath</p>
-            </div>
-        </div>
-    </section>
-
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2025 Ash House Somerset. All rights reserved.</p>
         </div>
     </footer>
 
+    <script src="luxury.js"></script>
 </body>
 </html>
